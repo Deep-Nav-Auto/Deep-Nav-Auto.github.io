@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://Deep-Nav-Auto.github.io/al-folio/sitemap.xml
+Sitemap: https://Deep-Nav-Auto.github.io/sitemap.xml
