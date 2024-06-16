@@ -1,28 +1,29 @@
 ---
-layout: profiles
-permalink: /people/
+layout: page
 title: people
-description: members of the lab or group
+permalink: /people/
+description: Lab Members
 nav: true
-nav_order: 7
-
-profiles:
-  # if you want to include more than one profile, just replicate the following block
-  # and create one content file for each profile inside _pages/
-  - align: right
-    image: prof_pic.jpg
-    content: about_einstein.md
-    image_circular: false # crops the image to make it circular
-    more_info: >
-      <p>555 your office number</p>
-      <p>123 your address street</p>
-      <p>Your City, State 12345</p>
-  - align: left
-    image: prof_pic.jpg
-    content: about_einstein.md
-    image_circular: false # crops the image to make it circular
-    more_info: >
-      <p>555 your office number</p>
-      <p>123 your address street</p>
-      <p>Your City, State 12345</p>
+nav-order: 1
+display_categories: [Lab Director, Postdoctoral Fellows, PhD Students, MSc Students, Undergraduates, Alumni]
+#display_categories: [Lab Director, PhD Students, MSc Students, Research Assistants, Undergraduates, Alumni]
+horizontal: false
 ---
+
+<!-- pages/people.md -->
+<div class="people">
+  <!-- Display categorized people -->
+  {%- for category in page.display_categories %}
+  <h2 class="category">{{ category }}</h2>
+  {%- assign categorized_people = site.people | where: "category", category -%}
+  {%- assign sorted_people = categorized_people | sort: "lastname" %}
+  <!-- Generate cards for each person -->
+  <div class="grid">
+    {%- for person in sorted_people -%}
+      {%- if person.show -%}
+        {% include people.html %}
+      {%- endif -%}
+    {%- endfor %}
+  </div>
+  {% endfor %}
+</div>
