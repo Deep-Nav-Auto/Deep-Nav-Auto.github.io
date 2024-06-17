@@ -11,11 +11,17 @@ nav_order: 3
 profiles:
   # if you want to include more than one profile, just replicate the following block
   # and create one content file for each profile inside _pages/
+  ## Lab Director
   - align: right
     image: hongzhouyang.jpeg
     category: Lab Director
     content: about_hongzhou.md
     image_circular: false # crops the image to make it circular
-
+  ## MSc Students
+  - align: left
+    image: hongzhouyang.jpeg
+    category: Lab Director
+    content: about_hongzhou.md
+    image_circular: false # crops the image to make it circular
 ---
 
