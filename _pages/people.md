@@ -21,7 +21,7 @@ horizontal: false
   <div class="grid">
     {%- for person in sorted_people -%}
       {%- if person.show -%}
-        {% include people.html %}
+        {% include people.liquid %}
       {%- endif -%}
     {%- endfor %}
   </div>
