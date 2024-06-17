@@ -22,8 +22,3 @@ Please see [here for information on applying to the lab](https://grad.ucalgary.c
 ### Potential Collaborators/Industry Partners
 Please reach out by e-mail directly.
 
-<div class="social">
-    <div class="contact-icons">
-    {% include social.html %}
-    </div>
-</div>
