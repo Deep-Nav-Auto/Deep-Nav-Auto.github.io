@@ -1,6 +1,5 @@
 ---
 layout: page
-title: Contact Us
 permalink: /contactus/
 nav: true
 nav_order: 50
