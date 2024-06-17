@@ -1,7 +1,7 @@
 ---
 layout: page
 title: people
-permalink: /people1/
+permalink: /people/
 description: Lab Members
 nav: true
 nav-order: 1
