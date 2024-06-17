@@ -6,6 +6,9 @@ nav: true
 nav_order: 6
 ---
 
+<!-- Link to the new CSS file -->
+<link rel="stylesheet" href="/assets/css/team.css">
+
 {% assign categories = "Lab Director, PhD Students, MSc Students, Research Assistants, Undergraduates, Alumni" | split: ", " %}
 {% for category in categories %}
   <h2>{{ category }}</h2>
