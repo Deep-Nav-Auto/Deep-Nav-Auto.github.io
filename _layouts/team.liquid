@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        img {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .member {
+            margin-bottom: 30px;
+        }
+        .member img {
+            width: 200px;
+            height: auto;
+        }
+        .bio {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ page.title }}</h1>
+
+    <h2>Lab Director</h2>
+    {% assign lab_director = site.people | where: "category", "Lab Director" %}
+    {% for profile in lab_director %}
+        <div class="member">
+            <h3><a href="{{ profile.url }}">{{ profile.name }}</a></h3>
+            <img src="{{ profile.image }}" alt="{{ profile.name }}">
+            <p><strong>Position:</strong> {{ profile.position }}</p>
+            <p><strong>Research Interests:</strong> {{ profile.research_interests }}</p>
+            <p class="bio"><strong>Bio:</strong> {{ profile.bio }}</p>
+            {% if profile.linkedin %}
+                <p><a href="{{ profile.linkedin }}" target="_blank">LinkedIn</a></p>
+            {% endif %}
+        </div>
+    {% endfor %}
+
+    <h2>PhD Students</h2>
+    {% assign phd_students = site.people | where: "category", "PhD Students" %}
+    {% for profile in phd_students %}
+        <div class="member">
+            <h3><a href="{{ profile.url }}">{{ profile.name }}</a></h3>
+            <img src="{{ profile.image }}" alt="{{ profile.name }}">
+            <p><strong>Research Focus:</strong> {{ profile.research_interests }}</p>
+            <p class="bio"><strong>Bio:</strong> {{ profile.bio }}</p>
+            {% if profile.linkedin %}
+                <p><a href="{{ profile.linkedin }}" target="_blank">LinkedIn</a></p>
+            {% endif %}
+        </div>
+    {% endfor %}
+
+    <h2>MSc Students</h2>
+    {% assign msc_students = site.people | where: "category", "MSc Students" %}
+    {% for profile in msc_students %}
+        <div class="member">
+            <h3><a href="{{ profile.url }}">{{ profile.name }}</a></h3>
+            <img src="{{ profile.image }}" alt="{{ profile.name }}">
+            <p><strong>Research Focus:</strong> {{ profile.research_interests }}</p>
+            <p class="bio"><strong>Bio:</strong> {{ profile.bio }}</p>
+            {% if profile.linkedin %}
+                <p><a href="{{ profile.linkedin }}" target="_blank">LinkedIn</a></p>
+            {% endif %}
+        </div>
+    {% endfor %}
+
+    <h2>Research Assistants</h2>
+    {% assign research_assistants = site.people | where: "category", "Research Assistants" %}
+    {% for profile in research_assistants %}
+        <div class="member">
+            <h3><a href="{{ profile.url }}">{{ profile.name }}</a></h3>
+            <img src="{{ profile.image }}" alt="{{ profile.name }}">
+            <p><strong>Research Focus:</strong> {{ profile.research_interests }}</p>
+            <p class="bio"><strong>Bio:</strong> {{ profile.bio }}</p>
+            {% if profile.linkedin %}
+                <p><a href="{{ profile.linkedin }}" target="_blank">LinkedIn</a></p>
+            {% endif %}
+        </div>
+    {% endfor %}
+
+    <h2>Alumni</h2>
+    {% assign alumni = site.people | where: "category", "Alumni" %}
+    {% for profile in alumni %}
+        <div class="member">
+            <h3><a href="{{ profile.url }}">{{ profile.name }}</a></h3>
+            <img src="{{ profile.image }}" alt="{{ profile.name }}">
+            <p><strong>Position:</strong> {{ profile.position }}</p>
+            <p><strong>Current Position:</strong> {{ profile.current_position }}</p>
+            <p class="bio"><strong>Bio:</strong> {{ profile.bio }}</p>
+            {% if profile.linkedin %}
+                <p><a href="{{ profile.linkedin }}" target="_blank">LinkedIn</a></p>
+            {% endif %}
+        </div>
+    {% endfor %}
+
+    <hr>
+
+    <p>For more information about our research projects and publications, please visit our <a href="{{ site.baseurl }}/research">Research</a> and <a href="{{ site.baseurl }}/publications">Publications</a> pages.</p>
+</body>
+</html>
