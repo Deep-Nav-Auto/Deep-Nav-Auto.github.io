@@ -189,7 +189,7 @@ collections:
   people:
     defaults:
         layout: team
-    output: false
+    output: true
 
 announcements:
   enabled: true
