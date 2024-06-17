@@ -1,10 +1,13 @@
 <div class="team-member">
-  <img src="{{ person.image }}" alt="{{ person.name }}" class="profile-picture">
-  <h3><a href="{{ person.url }}">{{ person.name }}</a></h3>
-  <p><strong>Position:</strong> {{ person.position }}</p>
-  <p><strong>Research Interests:</strong> {{ person.research_interests }}</p>
-  <p><strong>Bio:</strong> {{ person.bio }}</p>
-  {% if person.linkedin %}
-    <p><a href="{{ person.linkedin }}">LinkedIn</a></p>
-  {% endif %}
+  <div class="team-member-image">
+    <img src="{{ person.image }}" alt="{{ person.name }}" class="profile-picture">
+    <h3><a href="{{ person.url }}" class="team-member-name">{{ person.name }}</a></h3>
+  </div>
+  <div class="team-member-details">
+    <p class="team-member-research"><strong>Research Interests:</strong> {{ person.research_interests }}</p>
+    <p class="team-member-about"><strong>About:</strong> {{ person.about }}</p>
+    {% if person.linkedin %}
+      <p class="team-member-linkedin"><a href="{{ person.linkedin }}">LinkedIn</a></p>
+    {% endif %}
+  </div>
 </div>
