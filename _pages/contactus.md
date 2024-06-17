@@ -4,7 +4,7 @@ permalink: /contactus/
 title: contact us
 description: Location and Contact Information
 nav: true
-nav-order: 100
+nav-order: 4
 ---
 ## Finding the Lab
 ### Mailing Address
