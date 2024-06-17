@@ -2,7 +2,7 @@
 layout: page
 permalink: /contactus/
 nav: true
-nav_order: 50
+nav_order: 10
 ---
 
 <!-- Link to the team.css file -->
