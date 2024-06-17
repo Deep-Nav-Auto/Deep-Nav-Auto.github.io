@@ -1,8 +1,9 @@
 ---
 layout: page
+title: Contact Us
 permalink: /contactus/
 nav: true
-nav-order: 4
+nav_order: 50
 ---
 
 <!-- Link to the team.css file -->

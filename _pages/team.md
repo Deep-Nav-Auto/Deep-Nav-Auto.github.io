@@ -3,7 +3,7 @@ layout: page
 title: Team
 permalink: /team/
 nav: true
-nav_order: 3
+nav_order: 30
 ---
 
 <!-- Link to the new CSS file -->
