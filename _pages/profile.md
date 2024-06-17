@@ -5,7 +5,7 @@ title: people
 description: members of the lab or group
 display_categories: [Lab Director, PhD Students, MSc Students, Research Assistants, Undergraduates, Alumni]
 nav: true
-nav_order: 7
+nav_order: 2
 
 
 profiles:
