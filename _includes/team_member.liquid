@@ -1,0 +1,10 @@
+<div class="team-member">
+  <img src="{{ person.image }}" alt="{{ person.name }}">
+  <h3><a href="{{ person.url }}">{{ person.name }}</a></h3>
+  <p><strong>Position:</strong> {{ person.position }}</p>
+  <p><strong>Research Interests:</strong> {{ person.research_interests }}</p>
+  <p><strong>Bio:</strong> {{ person.bio }}</p>
+  {% if person.linkedin %}
+    <p><a href="{{ person.linkedin }}">LinkedIn</a></p>
+  {% endif %}
+</div>
