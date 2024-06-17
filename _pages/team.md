@@ -6,7 +6,13 @@ nav: true
 nav_order: 6
 ---
 
-{% assign team_members = site.people %}
-{% for person in team_members %}
-  {% include team_member.liquid person=person %}
+{% assign categories = "Lab Director, PhD Students, MSc Students, Research Assistants, Undergraduates, Alumni" | split: ", " %}
+{% for category in categories %}
+  <h2>{{ category }}</h2>
+  {% assign team_members = site.people | where: "category", category %}
+  <div class="category-group">
+    {% for person in team_members %}
+      {% include team_member.liquid person=person %}
+    {% endfor %}
+  </div>
 {% endfor %}
