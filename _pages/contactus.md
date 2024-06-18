@@ -1,14 +1,13 @@
 ---
 layout: page
+title: Contact Us
 permalink: /contactus/
 nav: true
-nav_order: 10
+nav_order: 4
 ---
 
 <!-- Link to the team.css file -->
 <link rel="stylesheet" href="/assets/css/team.css">
-
-# Contact Us
 
 For any inquiries or further information, please contact:
 
@@ -30,7 +29,7 @@ Calgary, AB T2N 1N4
 Canada
 
 ### Email:
-[Email Dr. Yang](mailto:hongzhou.yang@ucalgary.ca)
+[Email Dr. Yang](mailto:honyang@ucalgary.ca)
 
 
 ### Graduate Applicants
