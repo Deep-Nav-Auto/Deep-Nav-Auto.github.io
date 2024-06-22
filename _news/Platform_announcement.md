@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-The data collection platform is ready for the first road test with multiple sensors onboard, including the GNSS, IMU, camera, LiDAR and MCU. 
+The data collection platform is ready for the first road test with multiple sensors onboard, including the GNSS, IMU, camera, LiDAR and MCU.

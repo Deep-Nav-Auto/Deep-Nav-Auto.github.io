@@ -11,6 +11,7 @@ nav_order: 3
 
 {% assign categories = "Lab Director, Postdocs, PhD Students, MSc Students, Research Assistants, Undergraduates, Alumni" | split: ", " %}
 {% for category in categories %}
+
   <h2>{{ category }}</h2>
   {% assign team_members = site.people | where: "category", category %}
   <div class="category-group">

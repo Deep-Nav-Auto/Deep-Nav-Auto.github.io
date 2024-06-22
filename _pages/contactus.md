@@ -20,8 +20,8 @@ For any inquiries or further information, please contact:
 
 <img src="/assets/img/hongzhouyang.jpeg" alt="Dr. Hongzhou Yang" class="profile-picture">
 
-
 ### Address:
+
 Intelligent Navigation and Mapping Lab, ENE 222  
 University of Calgary  
 2500 University Dr NW  
@@ -29,9 +29,9 @@ Calgary, AB T2N 1N4
 Canada
 
 ### Email:
+
 [Email Dr. Yang](mailto:honyang@ucalgary.ca)
 
-
 ### Graduate Applicants
-Please see [here for information on applying to the lab](https://grad.ucalgary.ca/future-students/supervisor/hongzhou-yang).
 
+Please see [here for information on applying to the lab](https://grad.ucalgary.ca/future-students/supervisor/hongzhou-yang).

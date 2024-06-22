@@ -4,8 +4,8 @@
 
 title: blank # the website title (if blank, full name will be used instead)
 first_name: Intelligent Navigation and Mapping Lab
-middle_name: 
-last_name: 
+middle_name:
+last_name:
 email: honyang@ucalgary.ca
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Intelligent Navigation and Mapping Lab website.
@@ -18,11 +18,10 @@ lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://Deep-Nav-Auto.github.io # the base hostname & protocol for your site
-baseurl:  # the subpath of your site, e.g. /blog/. Leave blank for root
+baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
 last_updated: false # set to true if you want to display last updated in the footer
 impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
 back_to_top: true # set to false to disable the back to top button
-
 
 header_pages:
   - about.md
@@ -101,7 +100,7 @@ osf_id: # your OSF ID
 pinterest_id: # your pinterest id
 publons_id: # your ID on Publons
 quora_username: # your Quora username
-research_gate_profile: Hongzhou-Yang  # your profile on ResearchGate
+research_gate_profile: Hongzhou-Yang # your profile on ResearchGate
 scholar_userid: K95QotgAAAAJ # your Google Scholar ID
 scopus_id: # your profile on Scopus
 semanticscholar_id: # your Semantic Scholar ID
@@ -117,8 +116,6 @@ work_url: https://profiles.ucalgary.ca/hongzhou-yang # work page URL
 x_username: # your X handle
 youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 zotero_username: # your zotero username
-
-
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
