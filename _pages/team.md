@@ -9,7 +9,7 @@ nav_order: 3
 <!-- Link to the new CSS file -->
 <link rel="stylesheet" href="/assets/css/team.css">
 
-{% assign categories = "Lab Director, Postdocs, PhD Students, MSc Students, Research Assistants, Undergraduates, Alumni" | split: ", " %}
+{% assign categories = "Lab Director, Postdocs, PhD Students, MSc Students, Research Assistants, Undergraduates, High School Students, Alumni" | split: ", " %}
 {% for category in categories %}
 
   <h2>{{ category }}</h2>
