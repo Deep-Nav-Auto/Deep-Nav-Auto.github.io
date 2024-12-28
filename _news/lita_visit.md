@@ -14,6 +14,3 @@ As part of his visit, Li-Ta delivered insightful guest lectures, sharing his res
 
 We greatly value the knowledge and inspiration gained from his visit and look forward to future collaborations, building upon the strong connections established.
 
-<div style="text-align: center; margin: 20px 0;">
-  <img src="/assets/img/litavisit.jpeg" alt="Li-Ta's Visit" style="width:50%; height:auto; display:block; margin:auto;" />
-</div>
