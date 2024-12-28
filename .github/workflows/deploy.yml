@@ -58,45 +58,6 @@ on:
 permissions:
   contents: write
 
-
-name: Deploy Jekyll Site
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Install Ruby and Jekyll
-        run: |
-          sudo apt-get update
-          sudo apt-get install ruby-full build-essential zlib1g-dev
-          gem install jekyll bundler
-
-      # Install ImageMagick
-      - name: Install ImageMagick
-        run: sudo apt-get install imagemagick
-
-      - name: Install Dependencies
-        run: bundle install
-
-      - name: Build Site
-        run: bundle exec jekyll build
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
-
-
 jobs:
   deploy:
     # available images: https://github.com/actions/runner-images#available-images
