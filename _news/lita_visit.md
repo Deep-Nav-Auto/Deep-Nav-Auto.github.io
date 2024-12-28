@@ -6,9 +6,7 @@ related_posts: false
 image: /assets/img/litavisit.jpeg
 ---
 
-**A Warm Welcome to Li-Ta!**  
-
-We were delighted to host **Li-Ta** during his recent visit to our team. It was a great opportunity to exchange ideas, discuss ongoing projects, and explore potential collaborations. 
+We were delighted to host Li-Ta during his recent visit to our team. It was a great opportunity to exchange ideas, discuss ongoing projects, and explore potential collaborations. 
 
 During his visit, Li-Ta also delivered engaging guest lectures, where he shared his research journey. The lecture was well-received by the team and students, offering valuable insights and inspiring discussions that extended well beyond the session.  
 
