@@ -1,22 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "export",
   images: {
-    remotePatterns: [],
-  },
-  async redirects() {
-    return [
-      {
-        source: "/contactus",
-        destination: "/contact",
-        permanent: true,
-      },
-      {
-        source: "/contactus/:path*",
-        destination: "/contact",
-        permanent: true,
-      },
-    ];
+    unoptimized: true,
   },
 };
 
