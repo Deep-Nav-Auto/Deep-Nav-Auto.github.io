@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { ExternalLink } from "lucide-react";
 import type { Person } from "@/lib/types";
-import { cn, normalizeAssetPath } from "@/lib/utils";
+import { normalizeAssetPath } from "@/lib/utils";
 import {
   Dialog,
   DialogContent,
