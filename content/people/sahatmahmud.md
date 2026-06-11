@@ -1,10 +1,8 @@
 ---
-layout: team
+image: img/sahatmahmud.jpg
 name: Sahat Mahmud
-url:
-image: /assets/img/sahatmahmud.jpg
 research_interests: LEO PNT, ML/DL in Satellite Orbit Determination, and Satellite Clock Bias Prediction
-about: Sahat is a visiting undergraduate student from The Hong Kong Polytechnic University, majoring in Aviation Engineering. Currently, he is part of the Intelligent Navigation and Mapping Laboratory as a summer research student under the Mitacs Globalink Research Internship program. His research focuses on satellite orbit determination and clock bias prediction using machine learning.
+about: Sahat Mahmud was a visiting undergraduate student from The Hong Kong Polytechnic University, majoring in Aviation Engineering. He joined the Intelligent Navigation and Mapping Lab as a summer research student through the Mitacs Globalink Research Internship program, researching satellite orbit determination and clock bias prediction using machine learning.
 category: Alumni
-linkedin: www.linkedin.com/in/sahat-mahmud-hk/
+linkedin: https://www.linkedin.com/in/sahat-mahmud-hk/
 ---

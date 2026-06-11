@@ -54,23 +54,30 @@ inline: true
 
 3. Body = announcement text. `inline: true` shows it on the home page table; `false` adds a titled entry on `/news`.
 
-## Add or update a project
+## Adding a Gallery Item
 
-1. Create or edit `content/projects/your-project-slug.md`.
-2. Frontmatter:
+1. Place your photo(s) in `/public/gallery/` (or `assets/gallery/` at the repo root — they are synced to `public/gallery/` on `npm run dev` / `npm run build`). Use descriptive filenames (e.g. `lidar-test-march-2025.jpg`).
+2. Create `content/gallery/your-slug.md` (the filename becomes the item id).
+3. Copy frontmatter from an existing gallery file:
 
 ```yaml
 ---
-title: Project title
-description: One-line summary for the card
-img: assets/img/cover.jpg
-importance: 10
-category: work
+title: "Your title"
+date: "2025-06-01"
+cover: "/gallery/your-slug.jpg"
+category: "Field Work"   # Field Work | Conference | Lab | Equipment | Team
+tags: ["Tag one", "Tag two"]
+members: ["Full Name", "Another Name"]
+location: "Calgary, AB"
+featured: true           # true = homepage preview (max 6 shown)
+excerpt: "One-line teaser for the grid card"
 ---
 ```
 
-3. Markdown body = full project page at `/projects/your-project-slug`.
-4. See also `content/projects/README.md`.
+4. Write the article body in Markdown below the frontmatter — a short field journal or lab blog post (headings, lists, and inline images are supported).
+5. Set `featured: true` if you want the item on the homepage gallery preview.
+6. Run `npm run dev` to preview at `/gallery` before pushing.
+7. Commit both the image and the `.md` file together.
 
 ## Update the contact page
 

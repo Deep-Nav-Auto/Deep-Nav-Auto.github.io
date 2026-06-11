@@ -38,7 +38,7 @@ npm run lint    # ESLint
 
 ## Content updates
 
-See **[CONTRIBUTING.md](CONTRIBUTING.md)** for how lab members can add publications, team members, news, and projects without writing React code.
+See **[CONTRIBUTING.md](CONTRIBUTING.md)** for how lab members can add publications, team members, news, and gallery items without writing React code.
 
 ## Deployment (Vercel)
 
