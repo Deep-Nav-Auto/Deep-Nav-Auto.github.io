@@ -267,10 +267,7 @@ export default function HomePage() {
               className="absolute right-[-80px] top-1/2 -translate-y-1/2 width-[160px] height-[160px] rounded-full border border-white/[0.03] pointer-events-none"
               style={{ width: 160, height: 160 }}
             />
-            <div
-              className="absolute right-[-50px] top-1/2 -translate-y-1/2 width-[100px] height-[100px] rounded-full border border-white/[0.03] pointer-events-none"
-              style={{ width: 100, height: 100 }}
-            />
+            <div className="pointer-events-none absolute right-[-50px] top-1/2 h-[100px] w-[100px] -translate-y-1/2 rounded-full border border-white/[0.03]" />
 
             <div className="relative z-10">
               <div className="nm-label">Join the Lab</div>
