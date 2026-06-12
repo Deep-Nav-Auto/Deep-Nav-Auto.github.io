@@ -6,14 +6,10 @@ import { normalizeAssetPath } from "@/lib/utils";
 import { CitationModal } from "@/components/publications/CitationModal";
 
 interface PublicationsListProps {
-  publications: Publication[];
   groupedByYear: Array<[number, Publication[]]>;
 }
 
-export function PublicationsList({
-  publications,
-  groupedByYear,
-}: PublicationsListProps) {
+export function PublicationsList({ groupedByYear }: PublicationsListProps) {
   const [filter, setFilter] = useState<"All" | "Journal" | "Conference">("All");
 
   const filteredGroups = useMemo(() => {

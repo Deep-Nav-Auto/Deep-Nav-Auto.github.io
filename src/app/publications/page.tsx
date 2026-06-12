@@ -15,9 +15,6 @@ export default function PublicationsPage() {
   const groupedArray = Array.from(grouped.entries());
 
   return (
-    <PublicationsList
-      publications={publications}
-      groupedByYear={groupedArray}
-    />
+    <PublicationsList groupedByYear={groupedArray} />
   );
 }
