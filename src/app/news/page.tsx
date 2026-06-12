@@ -1,5 +1,3 @@
-import React from "react";
-
 const NEWS_ITEMS = [
   {
     date: "May 2025",
