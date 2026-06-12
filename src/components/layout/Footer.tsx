@@ -27,7 +27,7 @@ export function Footer() {
               Intelligent Navigation and Mapping Lab
             </div>
             <div className="font-mono text-[10px] text-white/20 uppercase tracking-widest">
-              © 2025 INML · University of Calgary
+              © {new Date().getFullYear()} INML · University of Calgary
             </div>
           </div>
         </div>
