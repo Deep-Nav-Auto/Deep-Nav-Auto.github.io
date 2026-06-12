@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { useScrollLock } from "@/hooks/useScrollLock";
 import type { GalleryItem } from "@/lib/types";
 import { MarkdownContent } from "@/components/markdown/MarkdownContent";
 
@@ -46,20 +47,16 @@ export function ArticleModal({
 
   const isOpen = Boolean(activeSlug && item);
 
+  useScrollLock(isOpen);
+
   useEffect(() => {
     if (!isOpen) {
-      document.body.style.overflow = "";
-      return () => {
-        document.body.style.overflow = "";
-      };
+      setVisible(false);
+      return;
     }
 
-    document.body.style.overflow = "hidden";
     const frame = requestAnimationFrame(() => setVisible(true));
-    return () => {
-      cancelAnimationFrame(frame);
-      document.body.style.overflow = "";
-    };
+    return () => cancelAnimationFrame(frame);
   }, [isOpen]);
 
   useEffect(() => {

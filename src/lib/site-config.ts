@@ -62,8 +62,8 @@ export const siteConfig: SiteConfig = {
 };
 
 export const brandAssets = {
-  logoFull: "/assets/full%20logo.jpg",
-  logoMark: "/assets/logo.jpg",
+  logoFull: "/assets/img/logo-full.jpg",
+  logoMark: "/assets/img/logo-mark.jpg",
 } as const;
 
 export const siteName =

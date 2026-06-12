@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { useScrollLock } from "@/hooks/useScrollLock";
 import { brandAssets } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 
@@ -24,12 +25,7 @@ export function Navbar() {
     setMenuOpen(false);
   }, [pathname]);
 
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [menuOpen]);
+  useScrollLock(menuOpen);
 
   useEffect(() => {
     const media = window.matchMedia("(min-width: 768px)");
