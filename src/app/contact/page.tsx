@@ -7,7 +7,15 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Action details can go here
+
+    const subject = encodeURIComponent(
+      form.subject ? `[INML] ${form.subject}` : "[INML] Website contact",
+    );
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`,
+    );
+
+    window.location.href = `mailto:honyang@ucalgary.ca?subject=${subject}&body=${body}`;
   };
 
   return (
