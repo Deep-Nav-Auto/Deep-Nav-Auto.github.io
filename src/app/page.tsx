@@ -262,10 +262,7 @@ export default function HomePage() {
           {/* Join the Lab CTA Card */}
           <div className="nm-card relative flex flex-col justify-center overflow-hidden p-6 sm:p-12">
             {/* Concentric Circles Decor */}
-            <div
-              className="absolute right-[-110px] top-1/2 -translate-y-1/2 width-[220px] height-[220px] rounded-full border border-white/[0.03] pointer-events-none"
-              style={{ width: 220, height: 220 }}
-            />
+            <div className="pointer-events-none absolute right-[-110px] top-1/2 h-[220px] w-[220px] -translate-y-1/2 rounded-full border border-white/[0.03]" />
             <div
               className="absolute right-[-80px] top-1/2 -translate-y-1/2 width-[160px] height-[160px] rounded-full border border-white/[0.03] pointer-events-none"
               style={{ width: 160, height: 160 }}
