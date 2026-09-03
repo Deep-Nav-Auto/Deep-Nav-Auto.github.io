@@ -1,10 +1,8 @@
 ---
-layout: team
+image: img/favourIheanyichukwu.JPG
 name: Favour Iheanyichukwu
-url:
-image: /assets/img/favourIheanyichukwu.JPG
 research_interests: Machine Learning, Artificial Intelligence, Object Recognition, Automation
-about: Favour is an undergraduate student at the University of Calgary and a part of the Intelligence Navigation and Mapping Lab as a summer research student (May-Ausgust 2024). She is currently aiding in the development of high definition mapping systems for autonomous driving.
+about: Favour Iheanyichukwu was an undergraduate student at the University of Calgary and part of the Intelligent Navigation and Mapping Lab as a summer research student (May–August 2024), where she contributed to high-definition mapping systems for autonomous driving.
 category: Alumni
 linkedin:
 ---

@@ -1,9 +1,8 @@
 ---
-layout: team
-name: Mehad Haggag
-image: /assets/img/mehadhaggag.jpg
+image: img/mehadhaggag.jpg
+name: Dr. Mehad Haggag
 research_interests: Vision-aided navigation, Localization, sensor integration, Deep learning for Computer vision, autonomous systems
-about: Mehad Haggag is a PhD candidate (co-supervised with Dr. Naser El-Sheimy) at the University of Calgary specializing in Positioning, Navigation and Wireless Location. Her research focuses on leveraging transformers to improve ego-motion estimation for autonomous vehicles, thereby enhancing their perception and navigation systems.
+about: Dr. Mehad Haggag earned her PhD at the University of Calgary (co-supervised with Dr. Naser El-Sheimy), specializing in Positioning, Navigation and Wireless Location. During her time in the Intelligent Navigation and Mapping Lab, she researched transformers for ego-motion estimation in autonomous vehicles to improve perception and navigation systems.
 category: Alumni
-linkedin: www.linkedin.com/in/mehad-haggag/
+linkedin: https://www.linkedin.com/in/mehad-haggag/
 ---

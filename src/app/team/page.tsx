@@ -3,20 +3,18 @@ import { RoleSection } from "@/components/team/RoleSection";
 
 export const metadata = {
   title: "Team",
-  description: "Team members of the Intelligent Navigation and Mapping Lab.",
+  description:
+    "Faculty, students, and alumni of the Intelligent Navigation and Mapping Lab at the University of Calgary.",
 };
 
 export default function TeamPage() {
-  const roles = getPeopleByRole();
+  const roles = getPeopleByRole().filter(({ people }) => people.length > 0);
 
   return (
-    <div>
-      <header className="mb-10">
-        <h1 className="font-serif text-3xl font-bold">Team</h1>
-        <p className="mt-2 text-[var(--text-muted)]">
-          Click a photo for full details. Hover for LinkedIn.
-        </p>
-      </header>
+    <div className="nm-page-enter nm-page-shell">
+      <div className="nm-label">Research Group</div>
+      <h1 className="nm-page-title mb-10 sm:mb-14">The Lab</h1>
+
       {roles.map(({ role, people }) => (
         <RoleSection key={role} role={role} people={people} />
       ))}

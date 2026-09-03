@@ -38,7 +38,7 @@ export const siteConfig: SiteConfig = {
   ],
   navItems: [
     { label: "Publications", href: "/publications", order: 2 },
-    { label: "Projects", href: "/projects", order: 2.5 },
+    { label: "Gallery", href: "/gallery", order: 2.5 },
     { label: "Team", href: "/team", order: 3 },
     { label: "Contact", href: "/contact", order: 4 },
   ],
@@ -60,6 +60,11 @@ export const siteConfig: SiteConfig = {
     enableBadges: false,
   },
 };
+
+export const brandAssets = {
+  logoFull: "/assets/img/logo-full.jpg",
+  logoMark: "/assets/img/logo-mark.jpg",
+} as const;
 
 export const siteName =
   siteConfig.title !== "blank"

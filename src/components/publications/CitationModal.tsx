@@ -28,18 +28,18 @@ export function CitationModal({ bibtex, title }: CitationModalProps) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline" size="sm">
-          BibTeX
-        </Button>
+        <button className="nm-btn-xs text-center min-w-[70px]">
+          Cite
+        </button>
       </DialogTrigger>
-      <DialogContent className="max-h-[80vh] max-w-2xl overflow-y-auto">
+      <DialogContent className="max-h-[80vh] max-w-2xl overflow-y-auto bg-[#080808] border border-[rgba(255,255,255,0.06)] text-white">
         <DialogHeader>
-          <DialogTitle>BibTeX — {title}</DialogTitle>
+          <DialogTitle className="font-syne font-semibold text-lg text-white">BibTeX — {title}</DialogTitle>
         </DialogHeader>
-        <pre className="overflow-x-auto rounded-md bg-[var(--code-bg)] p-4 text-xs">
+        <pre className="overflow-x-auto rounded-md bg-white/5 p-4 text-xs font-mono text-white/80">
           <code>{bibtex}</code>
         </pre>
-        <Button onClick={handleCopy} size="sm" className="w-fit">
+        <button onClick={handleCopy} className="nm-btn-primary mt-4 flex items-center justify-center gap-2">
           {copied ? (
             <>
               <Check className="h-4 w-4" /> Copied
@@ -49,7 +49,7 @@ export function CitationModal({ bibtex, title }: CitationModalProps) {
               <Copy className="h-4 w-4" /> Copy to clipboard
             </>
           )}
-        </Button>
+        </button>
       </DialogContent>
     </Dialog>
   );

@@ -6,13 +6,15 @@ import {
 } from "@/lib/markdown";
 import { getPublications, groupPublicationsByYear } from "@/lib/bibtex";
 import { siteConfig } from "@/lib/site-config";
+import { normalizeLinkedInUrl } from "@/lib/utils";
+import { resolveImageSrc } from "@/lib/images-server";
 import type {
   ContactPageContent,
+  GalleryCategory,
+  GalleryItem,
   NewsItem,
   PageContent,
   Person,
-  Project,
-  ProjectFrontmatter,
   Publication,
 } from "@/lib/types";
 
@@ -95,7 +97,10 @@ export function getContactPage(): ContactPageContent {
     intro: content.trim(),
     profile: {
       name: profile.name,
-      image: profile.image,
+      image:
+        resolveImageSrc(profile.image, "contact-profile", {
+          placeholder: "none",
+        }) ?? profile.image,
       position: profile.position,
       institution: profile.institution,
       researchInterests: profile.research_interests,
@@ -114,50 +119,85 @@ export function getContactPage(): ContactPageContent {
   };
 }
 
-export function getProjects(): Project[] {
-  return listMarkdownFiles("projects")
+const GALLERY_CATEGORIES: GalleryCategory[] = [
+  "Field Work",
+  "Conference",
+  "Lab",
+  "Equipment",
+  "Team",
+];
+
+interface GalleryFrontmatter {
+  title: string;
+  date: string;
+  cover: string;
+  category: string;
+  tags?: string[];
+  members?: string[];
+  location?: string;
+  featured?: boolean;
+  excerpt: string;
+}
+
+function parseGalleryCategory(value: string): GalleryCategory {
+  const match = GALLERY_CATEGORIES.find(
+    (c) => c.toLowerCase() === value.trim().toLowerCase(),
+  );
+  return match ?? "Lab";
+}
+
+export function getAllGalleryItems(): GalleryItem[] {
+  return listMarkdownFiles("gallery")
     .map((filePath) => {
+      const slug = slugFromFilename(filePath);
       const { frontmatter, content } =
-        readMarkdownFile<Record<string, unknown>>(filePath);
-      const fm = frontmatter as unknown as ProjectFrontmatter & {
-        related_publications?: boolean;
-      };
+        readMarkdownFile<GalleryFrontmatter>(filePath);
 
       return {
-        slug: slugFromFilename(filePath),
-        title: String(fm.title ?? slugFromFilename(filePath)),
-        description: String(fm.description ?? ""),
-        img: fm.img ? String(fm.img) : undefined,
-        importance: Number(fm.importance ?? 0),
-        category: String(fm.category ?? "work"),
-        relatedPublications: Boolean(fm.related_publications),
-        content,
+        slug,
+        title: frontmatter.title,
+        date: frontmatter.date,
+        cover: resolveImageSrc(frontmatter.cover, slug) ?? "",
+        category: parseGalleryCategory(frontmatter.category),
+        tags: Array.isArray(frontmatter.tags)
+          ? frontmatter.tags.map(String)
+          : [],
+        members: Array.isArray(frontmatter.members)
+          ? frontmatter.members.map(String)
+          : [],
+        location: frontmatter.location ? String(frontmatter.location) : undefined,
+        featured: Boolean(frontmatter.featured),
+        excerpt: String(frontmatter.excerpt ?? ""),
+        content: content.trim(),
       };
     })
-    .sort((a, b) => b.importance - a.importance);
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
-export function getProjectBySlug(slug: string): Project | undefined {
-  return getProjects().find((p) => p.slug === slug);
-}
-
-export function getProjectSlugs(): string[] {
-  return getProjects().map((p) => p.slug);
+export function getFeaturedGalleryItems(limit = 6): GalleryItem[] {
+  return getAllGalleryItems()
+    .filter((item) => item.featured)
+    .slice(0, limit);
 }
 
 export function getPeople(): Person[] {
   return listMarkdownFiles("people")
     .map((filePath) => {
       const { frontmatter } = readMarkdownFile<PersonFrontmatter>(filePath);
+      const slug = slugFromFilename(filePath);
+      const image = resolveImageSrc(frontmatter.image, slug, {
+        placeholder: "none",
+      });
+
       return {
-        slug: slugFromFilename(filePath),
+        slug,
         name: frontmatter.name,
         url: frontmatter.url,
-        image: frontmatter.image,
+        image,
         researchInterests: frontmatter.research_interests,
         about: frontmatter.about,
         category: frontmatter.category,
-        linkedin: frontmatter.linkedin,
+        linkedin: normalizeLinkedInUrl(frontmatter.linkedin),
         github: frontmatter.github,
         scholar: frontmatter.scholar,
         website: frontmatter.website,

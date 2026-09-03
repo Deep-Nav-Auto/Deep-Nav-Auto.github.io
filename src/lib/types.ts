@@ -84,17 +84,24 @@ export interface Publication {
   preview?: string;
 }
 
-export interface ProjectFrontmatter {
-  title: string;
-  description: string;
-  img?: string;
-  importance: number;
-  category: string;
-  relatedPublications?: boolean;
-}
+export type GalleryCategory =
+  | "Field Work"
+  | "Conference"
+  | "Lab"
+  | "Equipment"
+  | "Team";
 
-export interface Project extends ProjectFrontmatter {
+export interface GalleryItem {
   slug: string;
+  title: string;
+  date: string;
+  cover: string;
+  category: GalleryCategory;
+  tags: string[];
+  members: string[];
+  location?: string;
+  featured: boolean;
+  excerpt: string;
   content: string;
 }
 
