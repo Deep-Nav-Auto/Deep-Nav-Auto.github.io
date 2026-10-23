@@ -1,9 +1,8 @@
 ---
-layout: team
+image: img/daiwuran.jpg
 name: Dai Wuran
-image: /assets/img/daiwuran.jpg
 research_interests: Visual SLAM, autonomous driving, GNSS deep learning applications, and computer vision.
-about: Dai is a graduate student at the University of Calgary and part of the Intelligent Navigation and Mapping Lab (co-supervised with Dr. Naser El-Sheimy). His current research interests are visual navigation, SLAM, deep learning applications in GNSS.
+about: Dai Wuran is a PhD student at the University of Calgary and part of the Intelligent Navigation and Mapping Lab (co-supervised with Dr. Naser El-Sheimy). His research focuses on visual navigation, SLAM, and deep learning applications in GNSS.
 category: PhD Students
 linkedin:
 ---

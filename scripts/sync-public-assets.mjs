@@ -12,10 +12,12 @@ if (!existsSync(sourceAssets)) {
 
 mkdirSync(publicAssets, { recursive: true });
 
-for (const dir of ["img", "pdf", "html"]) {
+for (const dir of ["img", "pdf", "html", "gallery"]) {
   const src = join(sourceAssets, dir);
   if (!existsSync(src)) continue;
-  cpSync(src, join(publicAssets, dir), { recursive: true, force: true });
+  const destParent = dir === "gallery" ? join(root, "public") : publicAssets;
+  const dest = dir === "gallery" ? join(destParent, "gallery") : join(publicAssets, dir);
+  cpSync(src, dest, { recursive: true, force: true });
 }
 
-console.log("sync-public-assets: copied assets → public/assets");
+console.log("sync-public-assets: copied assets → public/assets (+ gallery if present)");

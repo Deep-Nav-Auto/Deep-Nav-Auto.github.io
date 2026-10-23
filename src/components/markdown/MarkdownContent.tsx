@@ -4,7 +4,7 @@ import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import Image from "next/image";
-import { normalizeAssetPath } from "@/lib/utils";
+import { resolveImageSrcClient } from "@/lib/images";
 import "katex/dist/katex.min.css";
 
 interface MarkdownContentProps {
@@ -23,8 +23,9 @@ export function MarkdownContent({ content, className }: MarkdownContentProps) {
         rehypePlugins={katexPlugins}
         components={{
           img: ({ src, alt }) => {
-            const imageSrc = normalizeAssetPath(typeof src === "string" ? src : "");
-            if (!imageSrc) return null;
+            const raw = typeof src === "string" ? src : "";
+            const slug = (alt ?? raw).replace(/\W+/g, "-").toLowerCase() || "inline";
+            const imageSrc = resolveImageSrcClient(raw || undefined, slug);
             return (
               <span className="my-4 block">
                 <Image

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { ExternalLink } from "lucide-react";
 import type { Person } from "@/lib/types";
-import { normalizeAssetPath } from "@/lib/utils";
+import { MonogramAvatar } from "@/components/team/MonogramAvatar";
 import {
   Dialog,
   DialogContent,
@@ -17,25 +17,65 @@ import { LinkedInIcon } from "@/components/team/LinkedInIcon";
 interface PersonCardProps {
   person: Person;
   role: string;
+  variant?: "card" | "alumni-row";
 }
 
-function getInitials(name: string): string {
-  return name
-    .split(/\s+/)
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((part) => part[0]?.toUpperCase() ?? "")
-    .join("");
-}
-
-export function PersonCard({ person, role }: PersonCardProps) {
+export function PersonCard({ person, role, variant = "card" }: PersonCardProps) {
   const [open, setOpen] = useState(false);
-  const imageSrc = normalizeAssetPath(person.image);
+  const imageSrc = person.image;
+
+  if (variant === "alumni-row") {
+    return (
+      <>
+        <article
+          className="group flex cursor-pointer items-center gap-5 border-b border-[rgba(255,255,255,0.05)] py-4 last:border-0 transition-colors hover:bg-white/[0.02]"
+          onClick={() => setOpen(true)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              setOpen(true);
+            }
+          }}
+          role="button"
+          tabIndex={0}
+          aria-label={`View profile for ${person.name}`}
+        >
+          <div className="relative h-10 w-10 shrink-0 overflow-hidden border border-[rgba(255,255,255,0.1)]">
+            {imageSrc ? (
+              <Image
+                src={imageSrc}
+                alt={person.name}
+                fill
+                className="object-cover object-top"
+                sizes="40px"
+              />
+            ) : (
+              <MonogramAvatar name={person.name} size="xs" />
+            )}
+          </div>
+          <div className="min-w-0 flex-1">
+            <span className="font-syne text-[15px] font-semibold text-white">
+              {person.name}
+            </span>
+            {person.researchInterests && (
+              <p className="mt-0.5 truncate font-sans text-[13px] font-light italic text-white/35">
+                {person.researchInterests}
+              </p>
+            )}
+          </div>
+          <span className="hidden font-sans text-[13px] font-light text-white/35 sm:block">
+            View profile →
+          </span>
+        </article>
+        {renderDialog()}
+      </>
+    );
+  }
 
   return (
     <>
       <article
-        className="group relative cursor-pointer overflow-hidden rounded-xl border border-[var(--divider)] bg-[var(--card-bg)] shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg focus-within:ring-2 focus-within:ring-[var(--theme-color)]"
+        className="group relative cursor-pointer overflow-hidden border border-[var(--divider)] bg-[var(--card-bg)] transition-all hover:-translate-y-1 hover:border-[rgba(255,255,255,0.18)]"
         onClick={() => setOpen(true)}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
@@ -57,11 +97,7 @@ export function PersonCard({ person, role }: PersonCardProps) {
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
             />
           ) : (
-            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[var(--theme-color)]/20 to-[var(--theme-color)]/5">
-              <span className="font-serif text-4xl font-bold text-[var(--theme-color)]">
-                {getInitials(person.name)}
-              </span>
-            </div>
+            <MonogramAvatar name={person.name} />
           )}
 
           {/* Hover overlay — LinkedIn icon or view hint */}
@@ -93,6 +129,12 @@ export function PersonCard({ person, role }: PersonCardProps) {
         </div>
       </article>
 
+      {renderDialog()}
+    </>
+  );
+
+  function renderDialog() {
+    return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-h-[90vh] max-w-md overflow-y-auto sm:max-w-lg">
           <DialogHeader>
@@ -106,11 +148,7 @@ export function PersonCard({ person, role }: PersonCardProps) {
                     className="object-cover object-top"
                   />
                 ) : (
-                  <div className="flex h-full w-full items-center justify-center bg-[var(--theme-color)]/10">
-                    <span className="text-2xl font-bold text-[var(--theme-color)]">
-                      {getInitials(person.name)}
-                    </span>
-                  </div>
+                  <MonogramAvatar name={person.name} size="dialog" />
                 )}
               </div>
               <div className="text-center sm:text-left">
@@ -189,6 +227,6 @@ export function PersonCard({ person, role }: PersonCardProps) {
           </div>
         </DialogContent>
       </Dialog>
-    </>
-  );
+    );
+  }
 }
